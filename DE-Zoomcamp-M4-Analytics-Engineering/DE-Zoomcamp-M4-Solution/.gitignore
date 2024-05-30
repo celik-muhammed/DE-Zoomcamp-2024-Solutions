@@ -1,3 +1,4 @@
 ## Negate the global .gitignore rule
 ## dbt project artifacts
 !taxi_rides_ny/
+!**taxi_zone_lookup.csv

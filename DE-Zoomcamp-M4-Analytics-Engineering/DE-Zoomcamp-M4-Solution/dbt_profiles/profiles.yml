@@ -1,0 +1,34 @@
+## profiles.yml is outside of dbt project folder,
+## which means I could have several dbt projects in all of them use the same or several profiles.
+## All profiles will be defined in one single file.
+
+## dbt BigQuery Profile
+bq-de-zoomcamp:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      dataset: trips_data_all
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: ../mage-zoomcamp-key.json
+      location: US
+      method: service-account
+      priority: interactive
+      project: terraform-demo-424509
+      threads: 1
+
+## dbt PostgreSQL Profile
+pg-dbt-workshop:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      user: root
+      pass: root
+      host: localhost
+      port: 5432
+      dbname: postgres
+      schema: taxi_rides_ny
+      threads: 1
+      keepalives_idle: 0  # default 0, indicating the system default

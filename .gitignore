@@ -7,26 +7,15 @@
 ## `--exclude-standard`: Ensures that only standard .gitignore rules are considered (ignores custom rules).
 # git ls-files --others --ignored --exclude-standard
 
-## VCS version control system
-## Ignore Git, Mercurial repository metadata
-**.git/
-**.hg/
-
-## docker artifacts
-# Include specific directory 'taxi_rides_ny' and its contents
-!**taxi_rides_ny*/
-**postgres*/
-**mage*/
-
 ## notebook artifacts
 # Ignore .ipynb files where filename starts with "note" recursively
-**note*.ipynb
-**tutorial*.ipynb
+**note.ipynb
+**tutorial.ipynb
 
 ## data artifacts
 ## Ignore any directory that includes "data" in its name and its subdirectories
-**data*/
-**output*/
+**data/
+**output/
 **.xls*
 **.csv
 **.parquet
@@ -36,7 +25,7 @@
 **.json
 
 ## model artifacts ignore all model files
-**model*/
+**model/
 **.bin
 **.pkl
 **.joblib
@@ -45,13 +34,22 @@
 **.tflite
 
 ## mlflow artifacts
-**mlflow*/
-**mlruns*/
 **artifacts*/
+**mlflow/
+**mlruns/
 **.db
 
 ## prefect artifacts
 **.prefectignore
+
+## docker artifacts
+**postgres*/
+**mage*/
+
+## VCS version control system
+## Ignore Git, Mercurial repository metadata
+**.git/
+**.hg/
 
 ## Editors
 **.idea/

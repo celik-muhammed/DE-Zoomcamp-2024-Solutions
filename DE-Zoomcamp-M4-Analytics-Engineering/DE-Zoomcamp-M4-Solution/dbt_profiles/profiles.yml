@@ -16,7 +16,7 @@ bq-de-zoomcamp:
       method: service-account
       priority: interactive
       project: terraform-demo-424509
-      threads: 1
+      threads: 4
 
 ## dbt PostgreSQL Profile
 pg-dbt-workshop:
@@ -30,5 +30,15 @@ pg-dbt-workshop:
       port: 5432
       dbname: postgres
       schema: taxi_rides_ny
-      threads: 1
+      threads: 4
+      keepalives_idle: 0  # default 0, indicating the system default
+    prod:
+      type: postgres
+      user: root
+      pass: root
+      host: localhost
+      port: 5432
+      dbname: postgres
+      schema: master
+      threads: 4
       keepalives_idle: 0  # default 0, indicating the system default
